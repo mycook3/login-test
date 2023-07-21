@@ -1,6 +1,6 @@
 package login.logintest.controller;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import login.logintest.domain.dto.JoinRequest;
 import login.logintest.domain.dto.LoginRequest;
 import login.logintest.domain.entity.User;
