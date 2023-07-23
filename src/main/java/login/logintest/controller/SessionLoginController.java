@@ -1,8 +1,8 @@
 package login.logintest.controller;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import login.logintest.domain.UserRole;
 import login.logintest.domain.dto.JoinRequest;
 import login.logintest.domain.dto.LoginRequest;
