@@ -22,6 +22,7 @@ public class MakeInitData {
                 .loginId("admin1")
                 .password("1234")
                 .nickname("관리자1")
+                .email("admin@cf.com")
                 .role(UserRole.ADMIN)
                 .build();
         userRepository.save(admin1);
