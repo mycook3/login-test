@@ -43,16 +43,11 @@ public class SecurityConfig {
                 .and()
                 .addFilterBefore(new JwtTokenFilter(userService, secretKey), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                // API
-                .antMatchers("/jwt-api-login/info").authenticated()
-                .antMatchers("/jwt-api-login/admin/**").hasAuthority(UserRole.ADMIN.name())
-                // 화면
                 .antMatchers("/jwt-login/info").authenticated()
                 .antMatchers("/jwt-login/admin/**").hasAuthority(UserRole.ADMIN.name())
                 .anyRequest().permitAll()
                 .and()
                 .exceptionHandling()
-                // Security Config와는 달리 익명 클래스 사용
                 // 인증 실패
                 .authenticationEntryPoint(new AuthenticationEntryPoint() {
                     @Override
