@@ -37,7 +37,6 @@ public class SecurityLoginController {
 
     @GetMapping("/join")
     public String joinPage(Model model) {
-
         model.addAttribute("joinRequest", new JoinRequest());
         return "join";
     }
