@@ -1,0 +1,35 @@
+[33mcommit 7d388dd6aeaad6ea30098271992e039e093760fd[m[33m ([m[1;36mHEAD -> [m[1;32msession[m[33m)[m
+Author: 박지환 <mycook3@naver.com>
+Date:   Sun Jul 23 12:33:29 2023 +0900
+
+    security login 구현
+
+[33mcommit 68af7f4a18b1aeab7f62056cb36d86782f6c386b[m[33m ([m[1;31morigin/session[m[33m)[m
+Author: 박지환 <mycook3@naver.com>
+Date:   Sun Jul 23 12:16:32 2023 +0900
+
+    springboot version downglade
+
+[33mcommit 5325bea2ee62aa6a22ab10712019e89a1af789b8[m
+Author: Park JiHwan <mycook3@naver.com>
+Date:   Fri Jul 21 15:24:36 2023 +0900
+
+    yml 설정 추가
+
+[33mcommit 909d5c11429f7085d8bf4bda5c13f0b1bf74e8f5[m
+Author: Park JiHwan <mycook3@naver.com>
+Date:   Fri Jul 21 15:07:42 2023 +0900
+
+    session login
+
+[33mcommit 73d6701738e4c1586b4fd86fd8ec4b20d2900885[m[33m ([m[1;31morigin/cookie[m[33m)[m
+Author: Park JiHwan <mycook3@naver.com>
+Date:   Fri Jul 21 14:08:53 2023 +0900
+
+    Cookie Login study
+
+[33mcommit 53934c116626e2e8e2efc4195d61a9e2097c7ef1[m[33m ([m[1;31morigin/test[m[33m)[m
+Author: Park JiHwan <mycook3@naver.com>
+Date:   Thu Jul 20 18:10:36 2023 +0900
+
+    first commit

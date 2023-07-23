@@ -1,32 +1,37 @@
 package login.logintest.config;
 
+import login.logintest.auth.JwtTokenFilter;
 import login.logintest.domain.UserRole;
+import login.logintest.service.UserService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+@RequiredArgsConstructor
+public class SecurityConfig {
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+    private final UserService userService;
+    private static String secretKey = "my-secret-key-123123";
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        return httpSecurity
+                .httpBasic().disable()
+                .csrf().disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .addFilterBefore(new JwtTokenFilter(userService, secretKey), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/security-login/info").authenticated()
-                .antMatchers("/security-login/admin/**").hasAuthority(UserRole.ADMIN.name())
-                .anyRequest().permitAll()
-                .and()
-                .formLogin()
-                .usernameParameter("loginId")
-                .passwordParameter("password")
-                .loginPage("/security-login/login")
-                .defaultSuccessUrl("/security-login")
-                .failureUrl("/security-login/login")
-                .and()
-                .logout()
-                .logoutUrl("/security-login/logout")
-                .invalidateHttpSession(true).deleteCookies("JSESSIONID");
+                .antMatchers("/jwt-login/info").authenticated()
+                .antMatchers("/jwt-login/admin/**").hasAuthority(UserRole.ADMIN.name())
+                .and().build();
     }
 }
