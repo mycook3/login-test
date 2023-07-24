@@ -57,6 +57,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
             user = User.builder()
                     .loginId(loginId)
                     .nickname(nickname)
+                    .email(email)
                     .provider(provider)
                     .providerId(providerId)
                     .role(UserRole.USER)

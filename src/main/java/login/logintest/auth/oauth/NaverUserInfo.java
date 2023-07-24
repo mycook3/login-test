@@ -1,7 +1,6 @@
 package login.logintest.auth.oauth;
 
 import lombok.AllArgsConstructor;
-
 import java.util.Map;
 
 @AllArgsConstructor
